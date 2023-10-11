@@ -10,6 +10,18 @@ namespace Client
     {
         public static void Main(string[] args)
         {
+            using var client = new HttpClient();
+            using var message = new HttpRequestMessage(HttpMethod.Get, "http://192.168.89.82:14567/");
+
+            Console.WriteLine("Клиент готов...");
+            Console.ReadKey();
+
+            using var result = client.Send(message);
+            Console.WriteLine(result.StatusCode);
+        }
+
+        public static void OldMain()
+        {
             var myClient = new MyClient();
 
             Console.WriteLine("Приложение начало работу");
