@@ -8,24 +8,43 @@ namespace Client
 {
     public static class Program
     {
-        public async static Task Main(string[] args)
+        public static void Main(string[] args)
         {
             var myClient = new MyClient();
+
             Console.WriteLine("Приложение начало работу");
-            await myClient.Start();
+            Task task = myClient.GetAsync();
+            myClient.Get();
             Console.WriteLine("Приложение завершило работу");
+
+            task.Wait();
         }
     }
 
     public class MyClient
     {
-        public async Task Start()
+        private HttpMessageHandler handler = new HttpClientHandler();
+
+        public async Task GetAsync()
         {
-            for (int i = 0; i < 10; i++)
+            using (var client = new HttpClient(handler, false))
             {
-                using (var client = new HttpClient())
+                for (int i = 0; i < 10; i++)
                 {
                     using var result = await client.GetAsync("https://google.com");
+                    Console.WriteLine(result.StatusCode + " Async");
+                }
+            }
+        }
+
+        public void Get()
+        {
+            using (var client = new HttpClient(handler, false))
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    using var message = new HttpRequestMessage(HttpMethod.Get, "https://google.com");
+                    using var result = client.Send(message);
                     Console.WriteLine(result.StatusCode);
                 }
             }
