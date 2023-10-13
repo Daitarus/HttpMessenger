@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Server
@@ -13,16 +14,18 @@ namespace Server
         {
             string mainMessage = @"<!DOCTYPE html>
             <html>
-            <head>
+                <head>
                     <meta charset='utf8'>
                     <title>Мой сайт</title>
-            </head>
-            <body>
-                <h2>Привет!</h2>
-            </body>
+                </head>
+                <body>
+                    <h2>Привет!</h2>
+                </body>
             </html>";
 
-            MyServer myServer = new MyServer(mainMessage, "http://192.168.89.82:14567/");
+            
+
+            MyServer myServer = new MyServer(mainMessage, "http://localhost:8888/");
 
             PrintStart(myServer.Start());
 
@@ -90,6 +93,5 @@ namespace Server
         {
             server.Close();
         }
-
     }
 }
