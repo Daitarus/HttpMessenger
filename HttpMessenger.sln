@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpMessenger.Server", "Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpMessenger.Database", "Database\HttpMessenger.Database.csproj", "{7748CCEA-7A21-4DF8-8D5C-2F9095CB9794}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDB", "RepositoryDB\RepositoryDB.csproj", "{B6D8E1EE-C0FE-4657-86EA-9597C495E24B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7748CCEA-7A21-4DF8-8D5C-2F9095CB9794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7748CCEA-7A21-4DF8-8D5C-2F9095CB9794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7748CCEA-7A21-4DF8-8D5C-2F9095CB9794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D8E1EE-C0FE-4657-86EA-9597C495E24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D8E1EE-C0FE-4657-86EA-9597C495E24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D8E1EE-C0FE-4657-86EA-9597C495E24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D8E1EE-C0FE-4657-86EA-9597C495E24B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
